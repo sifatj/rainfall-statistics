@@ -14,13 +14,20 @@ public class RainfallProgram {
 			String line = keyboard.readLine();
 			if("end".equals(line)) {
 				break;
-			}
+			} 
 			
 			// TODO: parse the measurement and add it to stats
+			try {
+				double measurement = Double.parseDouble(line);
+				stats.addMeasurement(measurement);
+			} catch(InvalidRainfallException ex) {
+				// TODO: print a message if the measurement is negative
+				System.out.println("Measurement is negative");
+			} catch(NumberFormatException ex) {
+				// TODO: print a message if the measurement cannot be parsed	
+				System.out.println("Measurement cannot be parsed");
+			}
 			
-			// TODO: print a message if the measurement is negative
-			
-			// TODO: print a message if the measurement cannot be parsed
 		}
 		
 		System.out.println(stats.getCount() + " measurement(s) entered.");
