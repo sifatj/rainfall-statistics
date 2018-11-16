@@ -14,7 +14,7 @@ public class RainfallProgram {
 			String line = keyboard.readLine();
 			if("end".equals(line)) {
 				break;
-			} 
+			}  
 			
 			// TODO: parse the measurement and add it to stats
 			try {
